@@ -1,10 +1,20 @@
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import { getSEOTags } from "@/libs/seo";
 import ClientLayout from "@/components/LayoutClient";
 import config from "@/config";
 import "./globals.css";
 
-const font = Inter({ subsets: ["latin"] });
+const plusJakarta = Plus_Jakarta_Sans({
+	subsets: ["latin"],
+	variable: "--font-plus-jakarta",
+	display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+	subsets: ["latin"],
+	variable: "--font-jetbrains",
+	display: "swap",
+});
 
 export const viewport = {
 	// Will use the primary color of your theme to show a nice theme color in the URL bar of supported browsers
@@ -21,8 +31,8 @@ export default function RootLayout({ children }) {
 	return (
 		<html
 			lang="en"
-			data-theme={config.colors.theme}
-			className={font.className}
+			data-theme="hafexec"
+			className={`${plusJakarta.variable} ${jetbrainsMono.variable} ${plusJakarta.className}`}
 		>
 			<body>
 				{/* ClientLayout contains all the client wrappers (Crisp chat support, toast messages, tooltips, etc.) */}

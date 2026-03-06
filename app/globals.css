@@ -1,11 +1,19 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: light --default;
+  themes: hafexec --default;
 }
 
 @theme {
-  --font-display: "Satoshi", "sans-serif";
-  
+  --font-sans: "Plus Jakarta Sans", "sans-serif";
+  --font-mono: "JetBrains Mono", "monospace";
+
+  --color-navy: #0F172A;
+  --color-slate-surface: #1E293B;
+  --color-slate-light: #334155;
+  --color-teal: #06B6D4;
+  --color-teal-bright: #22D3EE;
+  --color-amber: #F59E0B;
+
   --animate-shimmer: shimmer 3s ease-out infinite alternate;
   --animate-opacity: opacity 0.25s ease-in-out;
   --animate-appearFromRight: appearFromRight 300ms ease-in-out;
@@ -43,6 +51,39 @@
   }
 }
 
+/* hafexec DaisyUI custom theme */
+@plugin "daisyui/theme" {
+  name: "hafexec";
+  default: true;
+  prefersdark: true;
+  color-scheme: dark;
+  --color-base-100: #0F172A;
+  --color-base-200: #1E293B;
+  --color-base-300: #334155;
+  --color-base-content: #F1F5F9;
+  --color-primary: #06B6D4;
+  --color-primary-content: #0F172A;
+  --color-secondary: #F59E0B;
+  --color-secondary-content: #0F172A;
+  --color-accent: #22D3EE;
+  --color-accent-content: #0F172A;
+  --color-neutral: #1E293B;
+  --color-neutral-content: #F1F5F9;
+  --color-info: #06B6D4;
+  --color-info-content: #0F172A;
+  --color-success: #10B981;
+  --color-success-content: #0F172A;
+  --color-warning: #F59E0B;
+  --color-warning-content: #0F172A;
+  --color-error: #EF4444;
+  --color-error-content: #F1F5F9;
+  --radius-box: 0.75rem;
+  --radius-btn: 0.5rem;
+  --radius-badge: 1rem;
+  --animation-btn: 0.2s;
+  --btn-focus-scale: 0.98;
+}
+
 html,
 body {
   scroll-behavior: smooth !important;
@@ -71,6 +112,8 @@ progress::-webkit-progress-value {
   color: rgb(156 163 175) !important;
 }
 
-.btn {
-  text-transform: capitalize !important;
+/* Dot grid background pattern for hero sections */
+.dot-grid {
+  background-image: radial-gradient(circle, #334155 1px, transparent 1px);
+  background-size: 24px 24px;
 }
