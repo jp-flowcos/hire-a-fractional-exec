@@ -1,6 +1,8 @@
 import config from "@/config";
 import { getAllJobSlugs } from "@/libs/api/jobs";
 
+export const revalidate = 300;
+
 const BASE = `https://${config.domainName}`;
 
 const STATIC_ROUTES = [

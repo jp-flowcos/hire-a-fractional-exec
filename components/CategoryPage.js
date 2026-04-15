@@ -27,8 +27,8 @@ export default async function CategoryPage({ categorySlug }) {
   let jobs = [];
   try {
     jobs = await getJobsByRoleType(roleType);
-  } catch {
-    // Silently handle — page still renders with empty state
+  } catch (err) {
+    console.error(`[CategoryPage:${categorySlug}] getJobsByRoleType failed:`, err);
   }
   const roleLabel = formatRoleType(roleType);
 

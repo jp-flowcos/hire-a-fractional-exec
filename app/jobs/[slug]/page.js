@@ -15,6 +15,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import EmailCaptureForm from "@/components/EmailCaptureForm";
 import config from "@/config";
 
+export const revalidate = 300;
+export const dynamicParams = true;
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const job = await getJobBySlug(slug);
@@ -159,8 +162,8 @@ export default async function JobDetailPage({ params }) {
   let similarJobs = [];
   try {
     similarJobs = await getSimilarJobs(job.role_type, job.id, 3);
-  } catch {
-    // Silently handle
+  } catch (err) {
+    console.error(`[JobDetail:${slug}] getSimilarJobs failed:`, err);
   }
 
   const salary = formatSalary(job.salary_min, job.salary_max, job.salary_type);

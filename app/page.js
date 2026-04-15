@@ -13,6 +13,8 @@ import CategoryCard from "@/components/CategoryCard";
 import EmailCaptureForm from "@/components/EmailCaptureForm";
 import FAQ from "@/components/FAQ";
 
+export const revalidate = 300;
+
 export const metadata = getSEOTags({
   title: "The #1 Job Board for Fractional Executives | HireAFractionalExec",
   description:
@@ -82,14 +84,14 @@ export default async function HomePage() {
     if (!featuredJobs || featuredJobs.length === 0) {
       recentJobs = await getRecentJobs(6);
     }
-  } catch {
-    // Silently handle — page still renders
+  } catch (err) {
+    console.error("[HomePage] featured/recent jobs failed:", err);
   }
 
   try {
     jobCounts = await getJobCountsByRoleType();
-  } catch {
-    // Silently handle
+  } catch (err) {
+    console.error("[HomePage] job counts failed:", err);
   }
 
   const displayJobs = featuredJobs.length > 0 ? featuredJobs : recentJobs;

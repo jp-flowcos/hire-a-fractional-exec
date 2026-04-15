@@ -2,6 +2,8 @@ import CategoryPage from "@/components/CategoryPage";
 import { getSEOTags } from "@/libs/seo";
 import categories from "@/libs/category-content";
 
+export const revalidate = 300;
+
 const SLUG = "head-of-ops-jobs";
 
 export const metadata = getSEOTags({
