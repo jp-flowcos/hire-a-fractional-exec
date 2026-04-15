@@ -59,6 +59,11 @@ export const getSEOTags = ({
       alternates: { canonical: canonicalUrlRelative },
     }),
 
+    // Google Search Console verification (only rendered when env var is set)
+    ...(process.env.GOOGLE_SITE_VERIFICATION && {
+      verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
+    }),
+
     // If you want to add extra tags, you can pass them here
     ...extraTags,
   };
