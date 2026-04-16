@@ -9,8 +9,8 @@ import config from "@/config";
 
 const links = [
   { href: "/jobs", label: "Browse Jobs" },
+  { href: "/guides", label: "Guides" },
   { href: "/salary-calculator", label: "Salary Calculator" },
-  { href: "/blog", label: "Blog" },
 ];
 
 const categoryLinks = [

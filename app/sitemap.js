@@ -1,6 +1,7 @@
 import config from "@/config";
 import { getAllJobSlugs } from "@/libs/api/jobs";
 import { getCitySlugsForRole } from "@/libs/city-content";
+import { getAllGuideSlugs } from "@/libs/guides-content";
 
 export const revalidate = 300;
 
@@ -59,5 +60,21 @@ export default async function sitemap() {
     }))
   );
 
-  return [...staticEntries, ...cityEntries, ...jobEntries];
+  // Guide pages (Part H)
+  const guideEntries = getAllGuideSlugs().map((slug) => ({
+    url: `${BASE}/guides/${slug}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
+
+  // Guides index
+  const guidesIndex = {
+    url: `${BASE}/guides`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  };
+
+  return [...staticEntries, guidesIndex, ...guideEntries, ...cityEntries, ...jobEntries];
 }

@@ -29,6 +29,7 @@ const Footer = () => {
                 <Link href="/fractional-cto-jobs" className="link link-hover">Fractional CTO Jobs</Link>
                 <Link href="/fractional-cos-jobs" className="link link-hover">Chief of Staff Jobs</Link>
                 <Link href="/salary-calculator" className="link link-hover">Salary Calculator</Link>
+                <Link href="/guides" className="link link-hover">Guides</Link>
               </div>
             </div>
             <div className="lg:w-1/3 md:w-1/2 w-full px-4">
