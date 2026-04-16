@@ -1,6 +1,7 @@
 import Link from "next/link";
 import categories from "@/libs/category-content";
 import { getCity, getCitySlugsForRole } from "@/libs/city-content";
+import { getAllGuides } from "@/libs/guides-content";
 import { getJobsByRoleType } from "@/libs/api/jobs";
 import { formatRoleType } from "@/libs/utils";
 import JobCard from "@/components/JobCard";
@@ -211,6 +212,30 @@ export default async function CategoryPage({ categorySlug }) {
                     </Link>
                   );
                 })}
+              </div>
+            </section>
+          );
+        })()}
+
+        {/* Related guides */}
+        {(() => {
+          const relatedGuides = getAllGuides().filter(
+            (g) => g.relatedCategorySlug === categorySlug
+          );
+          if (relatedGuides.length === 0) return null;
+          return (
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold mb-4">Guides</h2>
+              <div className="flex flex-wrap gap-3">
+                {relatedGuides.map((g) => (
+                  <Link
+                    key={g.slug}
+                    href={`/guides/${g.slug}`}
+                    className="btn btn-outline btn-sm"
+                  >
+                    {g.title}
+                  </Link>
+                ))}
               </div>
             </section>
           );

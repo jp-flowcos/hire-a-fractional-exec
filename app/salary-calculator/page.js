@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getSEOTags } from "@/libs/seo";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -93,9 +94,12 @@ export default function SalaryCalculatorPage() {
           <h1 className="text-3xl md:text-4xl font-extrabold text-base-content mb-4">
             Fractional Executive Salary Calculator
           </h1>
-          <p className="text-lg text-base-content/60 mb-12 max-w-2xl">
+          <p className="text-lg text-base-content/60 mb-4 max-w-2xl">
             How much does a fractional executive cost? Estimate monthly
             retainers based on role type, company stage, and hours per week.
+          </p>
+          <p className="text-sm text-base-content/50 mb-12">
+            Last updated: April 2026 &middot; Source: market research across US fractional executive engagements
           </p>
 
           <SalaryCalculator salaryData={SALARY_ESTIMATES} />
@@ -111,6 +115,21 @@ export default function SalaryCalculatorPage() {
                 represent monthly retainers, not project-based fees.
                 All figures are in USD.
               </p>
+            </div>
+          </div>
+          {/* Browse jobs by role */}
+          <div className="mt-12">
+            <h2 className="text-xl font-bold text-base-content mb-4">
+              Browse Fractional Executive Jobs
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/fractional-coo-jobs" className="btn btn-outline btn-sm">Fractional COO Jobs</Link>
+              <Link href="/fractional-cmo-jobs" className="btn btn-outline btn-sm">Fractional CMO Jobs</Link>
+              <Link href="/fractional-cfo-jobs" className="btn btn-outline btn-sm">Fractional CFO Jobs</Link>
+              <Link href="/fractional-cto-jobs" className="btn btn-outline btn-sm">Fractional CTO Jobs</Link>
+              <Link href="/fractional-cro-jobs" className="btn btn-outline btn-sm">Fractional CRO Jobs</Link>
+              <Link href="/fractional-cos-jobs" className="btn btn-outline btn-sm">Chief of Staff Jobs</Link>
+              <Link href="/head-of-ops-jobs" className="btn btn-outline btn-sm">Head of Ops Jobs</Link>
             </div>
           </div>
         </div>

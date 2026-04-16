@@ -10,6 +10,10 @@ export default function robots() {
         allow: "/",
         disallow: ["/api/", "/dashboard/"],
       },
+      {
+        userAgent: ["GPTBot", "ChatGPT-User", "PerplexityBot", "ClaudeBot", "Google-Extended"],
+        allow: "/",
+      },
     ],
     sitemap: `${BASE}/sitemap.xml`,
     host: BASE,
