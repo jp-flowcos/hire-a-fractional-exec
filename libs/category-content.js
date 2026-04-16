@@ -2,292 +2,396 @@
  * Category content map for SEO landing pages.
  * Each category has its own route, title, meta description, definition block,
  * body copy, and FAQ content.
+ *
+ * Content standards locked in .agents/product-marketing-context.md §4.5:
+ *  - H1: "Fractional {Role} jobs" (keyword-first, no "— Hire or Get Hired").
+ *  - Subheadline: "Every fractional {Full-title} role posted in the last 30 days.
+ *    Stop hunting. Apply and get back to work."
+ *  - Body: 3 paragraphs. (1) 40-60 word definition block for snippets.
+ *    (2) Statistic-dense reality check. (3) Compensation + pricing.
+ *  - Operator-facing voice (80% of traffic per §2 audience mix).
+ *  - Retainer ranges from hireafractionalexec-seo-keywords.md §1 (2026 data).
+ *  - Anonymized interview quotes permitted; Jared byline on COO/ops pages only.
+ *
+ * Market stats for AEO citation (from hireafractionalexec-seo-keywords.md):
+ *  - Fractional market growing 46% YoY
+ *  - 72% of CEOs plan to increase fractional use
+ *  - 25% of US businesses use fractional → 35% projected end of 2026
+ *  - Fractional workforce doubled 60K → 120K (2022-2024)
  */
 
 const categories = {
   "fractional-coo-jobs": {
     roleType: "fractional_coo",
     title: "Fractional COO Jobs",
-    h1: "Fractional COO Jobs — Hire or Get Hired",
+    h1: "Fractional COO jobs",
+    subheadline:
+      "Every fractional Chief Operating Officer role posted in the last 30 days. Stop hunting. Apply and get back to work.",
     metaTitle: "Fractional COO Jobs | HireAFractionalExec",
     metaDescription:
-      "Browse open fractional COO positions. Find part-time Chief Operating Officer roles at startups and growth-stage companies. Updated weekly.",
+      "Every fractional Chief Operating Officer role posted in the last 30 days. Stop hunting. Apply and get back to work.",
     definition:
-      "A fractional COO is a part-time Chief Operating Officer who builds operational systems, scales teams, and frees up founder time — typically working 10-15 hours per week with multiple companies simultaneously.",
-    body: `Founders between $500K and $3M in revenue often hit an operational ceiling. Sales are growing, but delivery is inconsistent, hiring is reactive, and the founder is stuck in every decision. That's when a fractional COO steps in.
+      "A fractional COO is a part-time Chief Operating Officer who builds operational systems, scales teams, and frees up founder time — typically working 10-15 hours per week across 2-4 client companies.",
+    author: "Jared Perry",
+    authorTitle: "Practicing fractional COO",
+    body: `A fractional COO is a part-time Chief Operating Officer who builds operational systems, scales teams, and frees up founder time. Most engagements run 10-15 hours per week across 2-4 concurrent clients. Scope is clear: design repeatable processes, establish team structures, set up accountability systems, and hand it off once it runs without you.
 
-A fractional COO typically works 10-15 hours per week, building the operational infrastructure that lets a company scale without breaking. They design repeatable processes, establish team structures, create accountability systems, and free the founder to focus on growth.
+The fractional exec market grew 46% YoY into 2026, and 72% of CEOs plan to increase fractional usage in the next 12 months. The fractional workforce doubled from 60,000 to 120,000 professionals between 2022 and 2024. Most fractional COO engagements are fully remote, 3-9 months in duration, with a mix of weekly leadership meetings and deep-focus days. Experienced operators run 2-4 clients at once; more than 4 becomes context-switching, not operating.
 
-Companies that hire fractional COOs typically see measurable results within the first 90 days: documented SOPs, clear org charts, structured meeting cadences, and a founder who finally has time to think strategically instead of firefighting.`,
+Fractional COO rates typically run $8,000-$18,000 per month per client in 2026 (source: market research, April 2026). Senior operators with scale-up or enterprise experience charge the top of that range; newer fractionals start at $4,000-$6,000 per month per client and build case studies before raising. "Part-time COO," "interim COO," and "fractional COO" are used interchangeably — employers sometimes prefer "interim" when there's a defined end date tied to a full-time hire or exit.`,
     faqs: [
       {
-        question: "What does a fractional COO do?",
+        question: "How much does a fractional COO charge per month?",
         answer:
-          "A fractional COO handles operational leadership part-time — building systems, managing teams, and creating scalable processes. They typically own areas like hiring, process design, team structure, and cross-functional coordination.",
+          "Fractional COO retainers run $8,000-$18,000 per month per client in 2026. Senior operators with scale-up or enterprise experience charge the top of that range. Newer fractionals start at $4,000-$6,000 and build case studies before raising rates.",
       },
       {
-        question: "How much does a fractional COO cost?",
+        question: "How many fractional COO clients can one person handle?",
         answer:
-          "Fractional COOs typically charge $3,000-$10,000 per month depending on hours and scope. This is a fraction of the $200K-$350K annual salary a full-time COO would command.",
+          "Two to four is the sustainable range. One client at 20 hours a week produces the same income as three clients at 10 hours each — but three clients give you revenue diversification and broader pattern exposure. Past four clients, you're context-switching instead of operating, and quality drops.",
+      },
+      {
+        question: "How do I land my first fractional COO role?",
+        answer:
+          "Most first fractional COO engagements come from founders who already know your work — an ex-colleague, a company you advised, or a portfolio founder at a VC that knows you. Ship one pro-bono or discounted engagement first to build a case study, then use that specific outcome (not a generic resume) to close paid retainers. Job boards like this one work best once you have at least one engagement to reference.",
+      },
+      {
+        question: "What does a fractional COO actually do?",
+        answer:
+          "A fractional COO owns operational leadership part-time: process design, team structures, hiring pipelines, cross-functional coordination, and accountability systems. They embed with your team, run your meetings, and own outcomes — not just recommendations.",
+      },
+      {
+        question: "How is a fractional COO different from a consultant?",
+        answer:
+          "A consultant advises. A fractional COO executes. They sit in your leadership meetings, manage your people, own delivery, and stay long enough to watch the systems run. Most engagements are 3-9 months; consulting engagements are typically shorter and advisory-only.",
+      },
+      {
+        question: "How long is a typical fractional COO engagement?",
+        answer:
+          "3-9 months is the common range. Some evolve into 12+ month retainers; others wrap once the founder hires a full-time COO. Shorter-than-3-month engagements are usually mislabeled — they're consulting engagements, not fractional COO work.",
       },
       {
         question: "When should a founder hire a fractional COO?",
         answer:
-          "When you're spending more than 50% of your time on operations instead of growth, when your team has grown past 5-10 people, or when delivery quality is becoming inconsistent.",
-      },
-      {
-        question: "How many hours per week does a fractional COO work?",
-        answer:
-          "Most fractional COO engagements are 10-15 hours per week, though some range from 5 hours per week (advisory) to 20+ hours per week (interim).",
-      },
-      {
-        question: "What's the difference between a fractional COO and a consultant?",
-        answer:
-          "A consultant advises. A fractional COO executes. They embed with your team, attend your meetings, manage your people, and own outcomes — not just recommendations.",
+          "When the founder spends more than half their time on operations, when the team has grown past 10 people, when delivery is becoming inconsistent, or when the company needs operational infrastructure before making a full-time COO hire.",
       },
     ],
     relatedCategories: ["fractional-cos-jobs", "head-of-ops-jobs", "fractional-cmo-jobs"],
-    keywords: ["fractional coo jobs", "part-time coo", "fractional chief operating officer"],
+    keywords: ["fractional coo jobs", "part-time coo", "fractional chief operating officer", "interim coo"],
   },
 
   "fractional-cmo-jobs": {
     roleType: "fractional_cmo",
     title: "Fractional CMO Jobs",
-    h1: "Fractional CMO Jobs — Hire or Get Hired",
+    h1: "Fractional CMO jobs",
+    subheadline:
+      "Every fractional Chief Marketing Officer role posted in the last 30 days. Stop hunting. Apply and get back to work.",
     metaTitle: "Fractional CMO Jobs | HireAFractionalExec",
     metaDescription:
-      "Find fractional CMO positions at startups and scale-ups. Part-time marketing leadership roles with strategic and hands-on responsibilities.",
+      "Every fractional Chief Marketing Officer role posted in the last 30 days. Stop hunting. Apply and get back to work.",
     definition:
-      "A fractional CMO is a part-time Chief Marketing Officer who leads marketing strategy, builds teams, and drives growth — providing senior marketing leadership without the full-time executive price tag.",
-    body: `Startups and growth-stage companies need marketing leadership, but hiring a full-time CMO at $250K-$400K often doesn't make sense before product-market fit is locked in. A fractional CMO bridges that gap.
+      "A fractional CMO is a part-time Chief Marketing Officer who leads marketing strategy, builds the team, and drives growth — typically working 10-20 hours per week across 2-3 client companies.",
+    body: `A fractional CMO is a part-time Chief Marketing Officer who leads marketing strategy, builds teams, and drives growth. Engagements typically run 10-20 hours per week per client, often with 2-3 clients at once. Scope covers positioning, go-to-market strategy, channel prioritization, team hiring, and marketing analytics — everything a full-time CMO would own, compressed into the hours where strategic leverage matters most.
 
-Fractional CMOs typically own go-to-market strategy, channel prioritization, team building, and marketing infrastructure. They'll audit your current efforts, build a roadmap, hire or manage your marketing team, and set up measurement systems that tie marketing spend to revenue.
+The fractional executive market grew 46% YoY into 2026, and the fractional CMO category alone is $1.27B in 2026, projected to reach $2.68B by 2031. 72% of CEOs plan to increase fractional usage in the next 12 months. Most fractional CMO engagements are fully remote, 6-12 months in duration, and focused on a specific inflection: launching a new product, scaling marketing from zero, or bridging the gap to a full-time hire.
 
-The best fractional CMOs bring pattern recognition from working across multiple companies and industries. They've seen what works at your stage and can shortcut the experimentation that a first-time marketing leader would need.`,
+Fractional CMO rates typically run $8,000-$22,000 per month per client in 2026 — the widest range of any fractional role, reflecting the variety of scope from "advisory only" to "running the entire marketing function." B2B SaaS and fintech engagements tend to cluster at the top of that range. "Part-time CMO" and "fractional CMO" are used interchangeably; "marketing consultant" usually means something different (project-based, no team leadership).`,
     faqs: [
       {
-        question: "What does a fractional CMO do?",
+        question: "How much does a fractional CMO charge per month?",
         answer:
-          "A fractional CMO leads marketing strategy and execution part-time. They typically own GTM strategy, brand positioning, team building, channel optimization, and marketing analytics.",
+          "Fractional CMO retainers run $8,000-$22,000 per month per client in 2026 — the widest range of any fractional role. B2B SaaS, fintech, and private-equity-backed companies tend to pay the top of the range. Newer fractionals start at $5,000-$8,000 and build case studies before raising.",
       },
       {
-        question: "How much does a fractional CMO cost?",
+        question: "How many fractional CMO clients can one person handle?",
         answer:
-          "Fractional CMOs typically charge $5,000-$15,000 per month depending on scope and experience. Compare this to $250K-$400K for a full-time CMO.",
+          "Two to three concurrent clients is typical. CMO work requires deeper context-switching than some other fractional roles because brand, positioning, and team-building all require sustained attention. Four clients is possible but pushes quality.",
       },
       {
-        question: "Who hires fractional CMOs?",
+        question: "How do I land my first fractional CMO role?",
         answer:
-          "Startups with $1M-$10M in revenue, companies launching new products, organizations restructuring their marketing teams, and private equity firms improving portfolio company growth.",
+          "Most first fractional CMO engagements come through prior colleagues, ex-founders you've worked with, or via a proven portfolio of marketing wins at named companies. Package your strongest outcome (revenue attribution, launch success, team scale-up) into one case study, use it everywhere, and pitch fractional as a lower-risk way for founders to get that same result.",
+      },
+      {
+        question: "What does a fractional CMO actually do?",
+        answer:
+          "A fractional CMO owns marketing strategy and execution oversight: positioning, GTM, channel mix, team hiring and management, marketing-sales alignment, and attribution. They're hands-on enough to hire the right people and hands-off enough to not do the day-to-day campaigns themselves.",
       },
       {
         question: "How long is a typical fractional CMO engagement?",
         answer:
-          "Most engagements last 6-12 months. Some evolve into ongoing advisory roles, while others conclude once a full-time CMO is hired.",
+          "6-12 months is the most common range. Some evolve into ongoing advisory relationships at reduced hours; others conclude when a full-time CMO is hired. Fractional CMO engagements tend to be longer than fractional COO engagements because brand and positioning work compound over time.",
+      },
+      {
+        question: "When does a company need a fractional CMO vs a marketing manager?",
+        answer:
+          "A fractional CMO is right when the company needs strategic direction on positioning, channel mix, and team building — not when they need someone to run paid ads or manage a calendar. If the work is mostly execution, hire a marketing manager or agency. If the work is 'what should we be doing and why?', it's fractional CMO territory.",
       },
     ],
     relatedCategories: ["fractional-cro-jobs", "fractional-coo-jobs", "fractional-cto-jobs"],
-    keywords: ["fractional cmo jobs", "part-time cmo", "fractional marketing leader"],
+    keywords: ["fractional cmo jobs", "part-time cmo", "fractional chief marketing officer", "interim cmo"],
   },
 
   "fractional-cfo-jobs": {
     roleType: "fractional_cfo",
     title: "Fractional CFO Jobs",
-    h1: "Fractional CFO Jobs — Hire or Get Hired",
+    h1: "Fractional CFO jobs",
+    subheadline:
+      "Every fractional Chief Financial Officer role posted in the last 30 days. Stop hunting. Apply and get back to work.",
     metaTitle: "Fractional CFO Jobs | HireAFractionalExec",
     metaDescription:
-      "Browse fractional CFO positions. Part-time financial leadership for startups, SMBs, and growth-stage companies. Updated weekly.",
+      "Every fractional Chief Financial Officer role posted in the last 30 days. Stop hunting. Apply and get back to work.",
     definition:
-      "A fractional CFO is a part-time Chief Financial Officer who provides senior financial leadership — managing cash flow, building financial models, supporting fundraising, and creating the financial infrastructure companies need to scale.",
-    body: `Most companies under $10M in revenue don't need a $300K full-time CFO, but they desperately need financial leadership beyond what a bookkeeper provides. Fractional CFOs fill this gap.
+      "A fractional CFO is a part-time Chief Financial Officer who builds financial infrastructure, manages cash flow, supports fundraising, and provides strategic finance leadership — typically working 10-15 hours per week across 2-4 clients.",
+    body: `A fractional CFO is a part-time Chief Financial Officer who provides strategic finance leadership beyond what a bookkeeper or controller can offer. Engagements typically run 10-15 hours per week per client, often with 2-4 clients at once. Scope covers financial modeling, cash flow management, fundraising support, board reporting, and accounting system oversight — the strategic finance work that determines whether a company makes the right hiring and spending decisions.
 
-A fractional CFO handles financial modeling, cash flow management, fundraising support, board reporting, and financial systems design. They bring the strategic finance perspective that helps founders make better decisions about hiring, spending, and growth.
+The fractional CFO category is the most established of any fractional exec role — CFOs were doing this before "fractional" had a name. 72% of CEOs plan to increase fractional usage through 2026, and the fractional workforce has doubled from 60,000 to 120,000 professionals since 2022. Most fractional CFO engagements are fully remote, 6-18 months in duration, with peaks around fundraising cycles (Series A prep, bridge rounds, annual budget).
 
-Companies preparing to raise capital especially benefit from fractional CFOs. They can build the financial models, data rooms, and reporting infrastructure that investors expect — work that would take a generalist weeks but a fractional CFO can do in days.`,
+Fractional CFO rates typically run $8,000-$18,000 per month per client in 2026. Fundraising-heavy engagements (Series A data rooms, financial modeling for a raise) command the top of the range because the work is compressed into 60-90 days. "Fractional CFO," "part-time CFO," and "outsourced CFO" are used interchangeably. Compare fractional rates to a full-time CFO at $200K-$350K plus equity — the economics favor fractional for any company under ~$15M ARR.`,
     faqs: [
       {
-        question: "What does a fractional CFO do?",
+        question: "How much does a fractional CFO charge per month?",
         answer:
-          "A fractional CFO handles financial strategy, cash flow management, financial modeling, fundraising support, board reporting, budgeting, and financial systems implementation.",
+          "Fractional CFO retainers run $8,000-$18,000 per month per client in 2026. Fundraising-heavy engagements (Series A modeling, data room prep) command the top of the range because the work is compressed into 60-90 days. Ongoing advisory retainers cluster at $6,000-$12,000.",
       },
       {
-        question: "How much does a fractional CFO cost?",
+        question: "How many fractional CFO clients can one person handle?",
         answer:
-          "Fractional CFOs typically charge $3,000-$12,000 per month. This is roughly 20-30% of what a full-time CFO would cost when you factor in salary, benefits, and equity.",
+          "Three to four clients is the sustainable range for experienced fractional CFOs. Most CFO work is cyclical (monthly close, quarterly board) so 4 clients' worth of cycles fits into 40-50 billable hours per week when managed well.",
+      },
+      {
+        question: "How do I land my first fractional CFO role?",
+        answer:
+          "Fractional CFO is the most mature fractional category, which means the typical path is different: prior CFO experience at a VC-backed company, or a Big 4 / controller background followed by a move to startup finance. First engagements often come through accountant referrals, VC portfolio introductions, or prior CEO relationships.",
+      },
+      {
+        question: "What does a fractional CFO actually do?",
+        answer:
+          "A fractional CFO owns strategic finance: financial modeling, cash flow management, fundraising support, board reporting, budget vs actuals, and accounting system design. They work above the controller or bookkeeper — managing, not doing, the day-to-day transactional work.",
       },
       {
         question: "When does a company need a fractional CFO?",
         answer:
-          "When you're preparing to raise capital, when financial complexity outgrows your bookkeeper, when you need board-level financial reporting, or when cash flow management becomes critical.",
+          "When the company is preparing to raise capital, when revenue crosses $1M and financial complexity grows, when investors start asking for monthly reporting, or when the founder can't confidently answer 'what's our runway?' without a spreadsheet refresh.",
       },
       {
-        question: "What's the difference between a fractional CFO and a bookkeeper?",
+        question: "How is a fractional CFO different from a controller or bookkeeper?",
         answer:
-          "A bookkeeper records transactions. A fractional CFO provides strategic financial leadership — forecasting, scenario planning, investor relations, and decision support.",
+          "A bookkeeper records transactions. A controller manages monthly close and basic reporting. A fractional CFO does financial strategy: modeling, forecasting, fundraising support, and board-level communication. Most companies need all three at different points, but they're distinct roles.",
       },
     ],
     relatedCategories: ["fractional-coo-jobs", "fractional-cos-jobs", "fractional-cro-jobs"],
-    keywords: ["fractional cfo jobs", "part-time cfo", "fractional finance leader"],
+    keywords: ["fractional cfo jobs", "part-time cfo", "fractional chief financial officer", "outsourced cfo"],
   },
 
   "fractional-cto-jobs": {
     roleType: "fractional_cto",
     title: "Fractional CTO Jobs",
-    h1: "Fractional CTO Jobs — Hire or Get Hired",
+    h1: "Fractional CTO jobs",
+    subheadline:
+      "Every fractional Chief Technology Officer role posted in the last 30 days. Stop hunting. Apply and get back to work.",
     metaTitle: "Fractional CTO Jobs | HireAFractionalExec",
     metaDescription:
-      "Find fractional CTO positions. Part-time technical leadership for startups needing architecture guidance, team scaling, and build-vs-buy decisions.",
+      "Every fractional Chief Technology Officer role posted in the last 30 days. Stop hunting. Apply and get back to work.",
     definition:
-      "A fractional CTO is a part-time Chief Technology Officer who provides technical leadership — guiding architecture decisions, scaling engineering teams, and ensuring technology strategy aligns with business goals.",
-    body: `Non-technical founders building tech products face a common dilemma: they need senior technical leadership to make architecture decisions and manage developers, but a full-time CTO costs $250K-$400K and equity.
+      "A fractional CTO is a part-time Chief Technology Officer who provides technical leadership — guiding architecture, scaling engineering teams, and owning technical strategy — typically working 10-20 hours per week across 2-3 clients.",
+    body: `A fractional CTO is a part-time Chief Technology Officer who provides senior technical leadership without the full-time commitment. Engagements typically run 10-20 hours per week per client, often with 2-3 clients at once. Scope covers architecture decisions, engineering hiring, technical due diligence, build-vs-buy analysis, and team processes. Most fractional CTOs focus on strategy and leadership rather than writing production code, though some do both.
 
-A fractional CTO provides that technical leadership part-time. They evaluate your tech stack, guide architecture decisions, vet engineering hires, establish development processes, and ensure your team is building the right thing the right way.
+The fractional executive market grew 46% YoY into 2026, and fractional CTOs are particularly in demand at the MVP-to-scale transition and at AI-driven startups where the founding team lacks senior AI/ML experience. 72% of CEOs plan to increase fractional usage in the next 12 months. Most fractional CTO engagements are fully remote, 6-12 months in duration, with peaks during platform migrations, technical due diligence for fundraising, or transitions from agency-built MVPs to in-house engineering teams.
 
-Fractional CTOs are particularly valuable during technical inflection points: launching an MVP, migrating to a new platform, scaling infrastructure, or transitioning from an agency to an in-house team.`,
+Fractional CTO rates typically run $10,000-$22,000 per month per client in 2026 — the highest range of any fractional role, reflecting the scarcity of senior technical leadership. Engagements with AI, machine learning, or compliance-heavy domains (healthtech, fintech) command the top of the range. "Part-time CTO" and "fractional CTO" are used interchangeably; "technical advisor" usually means fewer hours and no team management responsibility.`,
     faqs: [
       {
-        question: "What does a fractional CTO do?",
+        question: "How much does a fractional CTO charge per month?",
         answer:
-          "A fractional CTO provides technical strategy and leadership part-time. They handle architecture decisions, code reviews, engineering hiring, technical debt management, and build-vs-buy analysis.",
+          "Fractional CTO retainers run $10,000-$22,000 per month per client in 2026 — the highest of any fractional role. AI/ML, healthtech, and fintech engagements command the top of the range because of technical scarcity and compliance complexity.",
       },
       {
-        question: "How much does a fractional CTO cost?",
+        question: "How many fractional CTO clients can one person handle?",
         answer:
-          "Fractional CTOs typically charge $5,000-$15,000 per month depending on the technical complexity and hours required.",
+          "Two to three clients is typical. CTO work requires deeper technical context per client than some other fractional roles — you need to know the codebase, the stack, and the team's strengths to make good architecture decisions. Four clients becomes context-switching.",
       },
       {
         question: "Can a fractional CTO write code?",
         answer:
-          "Some do, some don't. Most fractional CTOs focus on architecture, team management, and technical strategy rather than writing production code. If you need hands-on coding, clarify this upfront.",
+          "Some do, most don't. The majority of fractional CTOs focus on architecture, hiring, and technical strategy rather than shipping production code. If a company needs hands-on coding, a senior engineer or tech lead is usually a better fit than a fractional CTO. Clarify upfront in the engagement scope.",
       },
       {
-        question: "When should a startup hire a fractional CTO?",
+        question: "How do I land my first fractional CTO role?",
         answer:
-          "When you have a non-technical founding team building a tech product, when you need to scale your engineering team, or when you're facing major architecture decisions.",
+          "Most first fractional CTO engagements come through prior CEO relationships or by advising on technical due diligence for a VC. A common path: senior engineering leader at a scale-up takes on one discounted engagement with a former colleague's company, builds a case study, then uses that to land paid retainers.",
+      },
+      {
+        question: "What does a fractional CTO actually do?",
+        answer:
+          "A fractional CTO owns technical strategy: architecture decisions, stack evaluation, engineering hiring, code review process, build-vs-buy analysis, and technical due diligence for fundraising. They sit above the senior engineer or tech lead.",
+      },
+      {
+        question: "When does a startup need a fractional CTO?",
+        answer:
+          "When a non-technical founder is building a tech product, when the company is transitioning from an agency-built MVP to in-house engineering, when the engineering team needs to scale past 5-10 people, or when the company is facing technical due diligence from investors.",
       },
     ],
     relatedCategories: ["fractional-coo-jobs", "fractional-cmo-jobs", "fractional-cfo-jobs"],
-    keywords: ["fractional cto jobs", "part-time cto", "fractional technical leader"],
+    keywords: ["fractional cto jobs", "part-time cto", "fractional chief technology officer", "interim cto"],
   },
 
   "fractional-cos-jobs": {
     roleType: "fractional_cos",
     title: "Fractional Chief of Staff Jobs",
-    h1: "Fractional Chief of Staff Jobs — Hire or Get Hired",
+    h1: "Fractional Chief of Staff jobs",
+    subheadline:
+      "Every fractional Chief of Staff role posted in the last 30 days. Stop hunting. Apply and get back to work.",
     metaTitle: "Fractional Chief of Staff Jobs | HireAFractionalExec",
     metaDescription:
-      "Browse fractional Chief of Staff positions. Strategic project execution and cross-functional coordination roles for founders and CEOs.",
+      "Every fractional Chief of Staff role posted in the last 30 days. Stop hunting. Apply and get back to work.",
     definition:
-      "A fractional Chief of Staff is a part-time strategic operator who extends the CEO's capacity — managing cross-functional projects, driving strategic initiatives, and ensuring organizational alignment.",
-    body: `The Chief of Staff role has exploded in popularity at startups and growth-stage companies. A fractional Chief of Staff gives founders the strategic leverage of this role without the full-time commitment.
+      "A fractional Chief of Staff is a part-time strategic operator who extends the CEO's capacity — owning cross-functional projects, strategic initiatives, and the special-project work that falls outside any other role. Typically 10-15 hours per week across 2-3 clients.",
+    body: `A fractional Chief of Staff is a part-time strategic operator who extends the CEO's personal capacity. Engagements typically run 10-15 hours per week per client, often with 2-3 clients at once. Scope covers cross-functional project execution, board material preparation, OKR systems, leadership meeting facilitation, and the special-project work that doesn't fit neatly into any other role. They're the founder's force multiplier, not their assistant.
 
-Fractional Chiefs of Staff typically manage strategic projects, coordinate across departments, prepare board materials, run leadership meetings, and handle the high-priority work that doesn't fit neatly into any other role. They're the founder's force multiplier.
+The Chief of Staff role has exploded — "chief of staff" is searched 2,400 times per month in the US — and the fractional version is growing even faster. Fractional Chiefs of Staff tend to skew younger than fractional COOs (30s-40s, versus 40s-55 for COOs), often coming from prior full-time CoS roles at high-growth startups. Most engagements are fully remote, 6-12 months in duration, with founders at 10-100-employee companies — large enough to have cross-functional complexity, small enough that the CEO is still involved in execution.
 
-This role is ideal for founders who find themselves spread too thin across strategic initiatives. A fractional Chief of Staff takes ownership of the projects and processes that would otherwise fall through the cracks or keep the founder stuck in execution mode.`,
+Fractional Chief of Staff retainers typically run $2,500-$8,000 per month per client in 2026 — the lowest range of any fractional C-suite role because CoS work tends to be lower-scope than a full COO or CMO engagement. Full-time Chiefs of Staff earn $120,000-$200,000 annually. Title confusion is real: founders outside the startup world sometimes don't recognize "Chief of Staff," so fractional CoS candidates often translate the role as "strategic projects lead" or "founder's operational partner" when explaining the fit.`,
     faqs: [
       {
-        question: "What does a fractional Chief of Staff do?",
+        question: "How much does a fractional Chief of Staff charge per month?",
         answer:
-          "A fractional Chief of Staff manages strategic projects, coordinates across teams, prepares board materials, runs leadership meetings, and handles high-priority initiatives on behalf of the CEO.",
+          "Fractional Chief of Staff retainers run $2,500-$8,000 per month per client in 2026. Senior Chiefs of Staff with CEO-pairing experience at venture-backed companies command the top of the range; newer fractional CoS start at $1,500-$3,000 and build from there.",
+      },
+      {
+        question: "How many fractional Chief of Staff clients can one person handle?",
+        answer:
+          "Two to three concurrent clients is typical. CoS work is high-context — you need to understand each CEO's priorities, communication style, and strategic calendar — so context-switching is the biggest constraint. Four clients is possible but requires tight calendar discipline.",
       },
       {
         question: "How is a Chief of Staff different from a COO?",
         answer:
-          "A COO owns ongoing operations and typically manages departments. A Chief of Staff focuses on strategic projects, cross-functional coordination, and extending the CEO's personal capacity.",
+          "A COO owns operations as an ongoing function — processes, teams, delivery. A Chief of Staff owns strategic projects and CEO capacity — the things that don't fit neatly into any one department. COOs tend to be more senior, more operational, and longer-tenured. Chiefs of Staff are usually younger, more strategic, and often stepping-stone roles to COO or general-management positions.",
       },
       {
-        question: "How much does a fractional Chief of Staff cost?",
+        question: "How do I land my first fractional Chief of Staff role?",
         answer:
-          "Fractional Chiefs of Staff typically charge $2,500-$8,000 per month depending on hours and scope. Full-time Chiefs of Staff earn $120K-$200K annually.",
+          "Most first fractional CoS engagements come via a founder you've worked with closely — either as a prior full-time CoS, a consulting engagement, or a portfolio introduction. Build one strong case study that demonstrates the kind of strategic leverage you create for a CEO, and use it to close subsequent clients.",
+      },
+      {
+        question: "What does a fractional Chief of Staff actually do?",
+        answer:
+          "A fractional Chief of Staff runs strategic projects, prepares board materials, facilitates leadership meetings, tracks OKRs, manages cross-functional initiatives, and handles the high-priority work that the CEO can't delegate anywhere else. They extend the CEO's capacity without replacing department heads.",
       },
       {
         question: "What size company hires a fractional Chief of Staff?",
         answer:
-          "Companies with 10-100 employees are the sweet spot. Large enough to have cross-functional complexity, but small enough that the CEO is still involved in execution.",
+          "Companies with 10-100 employees are the sweet spot. Large enough to have cross-functional coordination problems the CEO can't solve alone. Small enough that the CEO is still actively involved in execution and needs someone operating at their level, not below it.",
       },
     ],
     relatedCategories: ["fractional-coo-jobs", "head-of-ops-jobs", "fractional-cmo-jobs"],
-    keywords: ["fractional chief of staff jobs", "chief of staff salary", "part-time chief of staff"],
+    keywords: ["fractional chief of staff jobs", "chief of staff jobs", "chief of staff salary", "part-time chief of staff"],
   },
 
   "fractional-cro-jobs": {
     roleType: "fractional_cro",
     title: "Fractional CRO Jobs",
-    h1: "Fractional CRO Jobs — Hire or Get Hired",
+    h1: "Fractional CRO jobs",
+    subheadline:
+      "Every fractional Chief Revenue Officer role posted in the last 30 days. Stop hunting. Apply and get back to work.",
     metaTitle: "Fractional CRO Jobs | HireAFractionalExec",
     metaDescription:
-      "Find fractional CRO positions. Part-time revenue leadership for GTM execution, sales process design, and pipeline management.",
+      "Every fractional Chief Revenue Officer role posted in the last 30 days. Stop hunting. Apply and get back to work.",
     definition:
-      "A fractional CRO is a part-time Chief Revenue Officer who unifies sales, marketing, and customer success under a single revenue strategy — driving pipeline growth and optimizing the full customer lifecycle.",
-    body: `Revenue leadership is the most common gap in growth-stage companies. The founder has been running sales, marketing is a patchwork of contractors, and there's no unified revenue strategy. A fractional CRO solves this.
+      "A fractional CRO is a part-time Chief Revenue Officer who unifies sales, marketing, and customer success under a single revenue strategy — typically working 10-15 hours per week across 2-3 clients.",
+    body: `A fractional CRO is a part-time Chief Revenue Officer who unifies sales, marketing, and customer success under a single revenue strategy. Engagements typically run 10-15 hours per week per client, often with 2-3 clients at once. Scope covers sales process design, pipeline management, marketing-sales alignment, pricing strategy, and retention. Fractional CROs are often former CROs or VPs of Sales who moved to fractional work after 2-3 full-time revenue leadership tours.
 
-Fractional CROs own the entire revenue engine: sales process design, pipeline management, marketing and sales alignment, pricing strategy, and customer retention. They bring the systematic approach to revenue generation that separates scaling companies from stalled ones.
+The fractional exec market grew 46% YoY into 2026, and CRO is one of the newest and fastest-growing fractional categories — as go-to-market complexity has increased, more $1M-$10M ARR companies need CRO-level coordination but can't afford full-time. 72% of CEOs plan to increase fractional usage in the next 12 months. Most fractional CRO engagements are fully remote, 6-12 months in duration, at companies that have product-market fit but haven't yet built a repeatable sales engine.
 
-Companies between $1M and $10M in revenue benefit most from fractional CROs. They need someone who can design a repeatable sales process, build the team to run it, and connect marketing efforts directly to revenue outcomes.`,
+Fractional CRO rates typically run $10,000-$20,000 per month per client in 2026 — the second-highest range of any fractional role after CTO. Engagements that include hands-on team hiring and enterprise sales commands top of range. "Part-time CRO," "interim CRO," and "fractional head of revenue" are used interchangeably. The CRO role is distinct from a VP of Sales: CROs own the full revenue engine (sales + marketing + success alignment), VPs of Sales own the sales team and process.`,
     faqs: [
       {
-        question: "What does a fractional CRO do?",
+        question: "How much does a fractional CRO charge per month?",
         answer:
-          "A fractional CRO leads revenue strategy across sales, marketing, and customer success. They design sales processes, build pipeline systems, align GTM teams, and optimize conversion across the funnel.",
+          "Fractional CRO retainers run $10,000-$20,000 per month per client in 2026 — the second-highest of any fractional role. Enterprise SaaS and B2B fintech engagements command the top; early-stage engagements cluster at $6,000-$12,000.",
       },
       {
-        question: "How much does a fractional CRO cost?",
+        question: "How many fractional CRO clients can one person handle?",
         answer:
-          "Fractional CROs typically charge $5,000-$15,000 per month. Full-time CROs command $250K-$400K in total compensation.",
+          "Two to three concurrent clients is typical. Revenue leadership requires deep context on each company's sales motion, product, and customer base — more context than some other fractional roles — so three is often the practical upper limit for quality.",
       },
       {
-        question: "What's the difference between a fractional CRO and a VP of Sales?",
+        question: "How do I land my first fractional CRO role?",
         answer:
-          "A VP of Sales manages the sales team and process. A CRO owns the entire revenue strategy including marketing, sales, and customer success alignment.",
+          "Most first fractional CRO engagements come through prior CEO relationships or VC portfolio introductions. The strongest path: a full-time CRO tenure at a B2B SaaS company that scaled from $1M to $10M+ ARR, packaged into a specific playbook (e.g., 'I took X company from $2M to $8M ARR by doing Y, Z'), used as a case study for fractional clients in similar situations.",
       },
       {
-        question: "When should a company hire a fractional CRO?",
+        question: "What does a fractional CRO actually do?",
         answer:
-          "When revenue growth has plateaued, when sales and marketing aren't aligned, when you need a repeatable sales process, or when you're preparing to scale your GTM team.",
+          "A fractional CRO owns the revenue engine: sales process design, pipeline management, sales-marketing alignment, pricing strategy, customer retention, and revenue operations infrastructure. They sit above the VP of Sales and the Head of Marketing, making strategic calls about how those functions work together.",
+      },
+      {
+        question: "How is a fractional CRO different from a VP of Sales?",
+        answer:
+          "A VP of Sales manages the sales team and sales process. A CRO owns the full revenue strategy including marketing, sales, customer success, and pricing. CROs work above VPs of Sales and typically have more P&L accountability for the full customer lifecycle.",
+      },
+      {
+        question: "When does a company need a fractional CRO?",
+        answer:
+          "When revenue growth has plateaued at $1M-$5M ARR, when sales and marketing aren't aligned, when you need a repeatable sales process but can't justify a full-time CRO, or when you're preparing to scale the GTM team from 2-3 sellers to a real org.",
       },
     ],
     relatedCategories: ["fractional-cmo-jobs", "fractional-coo-jobs", "fractional-cfo-jobs"],
-    keywords: ["fractional cro jobs", "part-time cro", "fractional revenue leader"],
+    keywords: ["fractional cro jobs", "part-time cro", "fractional chief revenue officer", "interim cro"],
   },
 
   "head-of-ops-jobs": {
     roleType: "head_of_ops",
-    title: "Head of Ops Jobs",
-    h1: "Head of Operations Jobs — Hire or Get Hired",
+    title: "Head of Operations Jobs",
+    h1: "Head of Operations jobs",
+    subheadline:
+      "Every fractional Head of Operations and VP of Ops role posted in the last 30 days. Stop hunting. Apply and get back to work.",
     metaTitle: "Head of Operations Jobs | HireAFractionalExec",
     metaDescription:
-      "Browse Head of Operations positions. Operational leadership roles for companies making their first dedicated ops hire.",
+      "Every fractional Head of Operations and VP of Ops role posted in the last 30 days. Stop hunting. Apply and get back to work.",
     definition:
-      "A Head of Operations is an operational leader who designs processes, builds team structures, and creates the systems that let a company deliver consistently — often a company's first dedicated ops hire.",
-    body: `Many companies reach a point where operational complexity outgrows the founder's ability to manage it ad hoc. The Head of Ops is often the first dedicated operations hire, and it's a critical one.
+      "A fractional Head of Operations is a part-time operations leader who designs processes, builds team structures, and creates the systems that let a company deliver consistently — often a company's first dedicated ops hire. Typically 10-15 hours per week across 2-3 clients.",
+    author: "Jared Perry",
+    authorTitle: "Practicing fractional COO",
+    body: `A Head of Operations (sometimes titled VP of Operations) is an operations leader who designs processes, builds team structures, and creates the systems that let a company deliver consistently. The fractional version of the role typically runs 10-15 hours per week per client, often with 2-3 clients at once. Scope covers SOP design, vendor management, delivery cadence, tool selection, and establishing the operational rhythm that keeps things running. More execution-focused than a COO.
 
-A Head of Ops designs and implements the processes that let a company deliver consistently. They create SOPs, build team structures, manage vendors, and establish the operational rhythm that keeps everything running. Unlike a COO, they're typically more hands-on and execution-focused.
+The fractional executive market grew 46% YoY into 2026, and Head of Operations is one of the most common first fractional engagements for scale-up operators transitioning from full-time roles. 72% of CEOs plan to increase fractional usage in the next 12 months. Most fractional Head of Ops engagements are fully remote, 3-9 months in duration, at companies with 10-50 employees experiencing growing pains: missed deadlines, inconsistent delivery quality, unclear ownership, and founders stuck doing operations themselves.
 
-This role is ideal for companies with 10-30 employees who are experiencing growing pains: missed deadlines, inconsistent delivery, unclear ownership, and founders who are stuck in day-to-day operations.`,
+Fractional Head of Operations retainers typically run $3,000-$8,000 per month per client in 2026, which is lower than the full COO range because scope is typically tighter — execution of defined operational work versus ownership of broader organizational strategy. Senior operators with prior COO or Director-of-Operations experience at scale-ups charge the top of the range. Full-time Head of Operations salaries run $100,000-$180,000 in 2026 for comparison.`,
     faqs: [
       {
-        question: "What does a Head of Operations do?",
+        question: "How much does a fractional Head of Operations charge per month?",
         answer:
-          "A Head of Operations designs processes, manages team structures, oversees delivery, handles vendor relationships, and ensures operational consistency across the organization.",
+          "Fractional Head of Ops retainers run $3,000-$8,000 per month per client in 2026. Senior operators with prior Director-of-Operations or COO experience command the top of the range. Full-time Head of Ops roles pay $100,000-$180,000 per year in 2026 for comparison.",
       },
       {
-        question: "What's the difference between Head of Ops and COO?",
+        question: "How many fractional Head of Operations clients can one person handle?",
         answer:
-          "A Head of Ops is typically more execution-focused and hands-on. A COO operates at a more strategic level and usually has broader organizational authority. Head of Ops often grows into the COO role.",
+          "Three to four clients is typical. Head of Ops work tends to be more process-execution-driven than fractional COO work, so context-switching is lower — more of the work is building the same kind of SOPs, delivery cadences, and vendor management across different companies.",
       },
       {
-        question: "How much does a Head of Operations earn?",
+        question: "How do I land my first fractional Head of Operations role?",
         answer:
-          "Full-time Head of Operations salaries range from $100K-$180K. Fractional or contract Head of Ops roles typically pay $3,000-$8,000 per month.",
+          "Most first Head of Ops engagements come through prior colleagues or founders who saw you run operations at scale at your last full-time company. The fastest path: a specific story about a process you fixed or a team you scaled (e.g., 'I took delivery lead time from 12 days to 4 days at X company') becomes your opening pitch.",
       },
       {
-        question: "When should a company hire a Head of Operations?",
+        question: "What does a fractional Head of Operations actually do?",
         answer:
-          "When the founder is spending most of their time on operations, when delivery quality is inconsistent, when the team has grown past 10 people, or when you need someone to own internal processes.",
+          "A fractional Head of Ops designs SOPs, manages vendors, owns delivery cadence and quality, handles tool selection and implementation, and establishes the operational rhythm across the team. More execution-focused than a COO — more hands-on than strategic.",
+      },
+      {
+        question: "What's the difference between Head of Ops and fractional COO?",
+        answer:
+          "A fractional COO owns broader organizational strategy: team structures, hiring, cross-functional coordination, and the operational roadmap. A Head of Ops is more execution-focused: running the processes the COO designs, managing the tooling and vendors, owning delivery quality. Head of Ops is often a stepping-stone role to COO.",
+      },
+      {
+        question: "When does a company need a Head of Operations?",
+        answer:
+          "When the company has 10-50 employees, delivery is inconsistent, ownership is unclear, and the founder is still doing operations themselves. Often this is the company's first dedicated operations hire — the moment when 'everyone does ops' stops working.",
       },
     ],
     relatedCategories: ["fractional-coo-jobs", "fractional-cos-jobs", "fractional-cfo-jobs"],
-    keywords: ["head of operations jobs", "operations manager", "head of ops"],
+    keywords: ["head of operations jobs", "fractional head of ops", "vp of operations", "fractional operations leader"],
   },
 };
 

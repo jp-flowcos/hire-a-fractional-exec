@@ -17,11 +17,14 @@ export default async function CategoryPage({ categorySlug }) {
     roleType,
     title,
     h1,
+    subheadline,
     definition,
     body,
     faqs,
     relatedCategories,
     keywords,
+    author,
+    authorTitle,
   } = category;
 
   let jobs = [];
@@ -31,6 +34,13 @@ export default async function CategoryPage({ categorySlug }) {
     console.error(`[CategoryPage:${categorySlug}] getJobsByRoleType failed:`, err);
   }
   const roleLabel = formatRoleType(roleType);
+
+  // Freshness signal for AEO — ISR revalidates this on each regeneration.
+  const lastUpdated = new Date().toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   // Build FAQ JSON-LD structured data
   const faqJsonLd = {
@@ -70,9 +80,28 @@ export default async function CategoryPage({ categorySlug }) {
         />
 
         {/* H1 */}
-        <h1 className="text-3xl md:text-4xl font-extrabold mb-6">{h1}</h1>
+        <h1 className="text-3xl md:text-4xl font-extrabold mb-3">{h1}</h1>
 
-        {/* Definition callout */}
+        {/* Subheadline — the pain-point hook per context doc §4.5 */}
+        {subheadline && (
+          <p className="text-lg md:text-xl text-base-content/70 mb-4 leading-relaxed">
+            {subheadline}
+          </p>
+        )}
+
+        {/* Author + Last updated — AEO freshness + E-E-A-T signals */}
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-base-content/60 mb-8">
+          {author && (
+            <span>
+              By <span className="font-semibold text-base-content/80">{author}</span>
+              {authorTitle ? ` — ${authorTitle}` : ""}
+            </span>
+          )}
+          {author && <span aria-hidden="true">·</span>}
+          <span>Last updated {lastUpdated}</span>
+        </div>
+
+        {/* Definition callout — optimized for 40-60 word snippet extraction */}
         <div className="bg-primary/5 border-l-4 border-primary rounded-r-lg p-5 mb-8">
           <p className="text-base-content/80 text-base leading-relaxed">
             {definition}

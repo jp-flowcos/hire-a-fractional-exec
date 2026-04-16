@@ -114,13 +114,12 @@ export default async function HomePage() {
               The Job Board for Fractional C-Suite
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-base-content mb-6 tracking-tight leading-tight">
-              Fractional Leaders.{" "}
-              <span className="text-primary">Real Roles.</span>{" "}
-              No Middleman.
+              Fractional executive jobs.{" "}
+              <span className="text-primary">In one place.</span>
             </h1>
             <p className="text-lg md:text-xl text-base-content/60 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Find or post fractional COO, CMO, CFO, CTO, and C-suite roles.
-              No recruiters. No fees for job seekers. Direct connections only.
+              Stop writing LinkedIn posts to find your next client. Every
+              fractional role posted in the last 30 days, ready to apply.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
               <Link href="/jobs" className="btn btn-primary btn-lg">
