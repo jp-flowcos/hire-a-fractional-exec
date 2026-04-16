@@ -7,6 +7,7 @@ import {
   formatLocationType,
   formatSalary,
   timeAgo,
+  roleTypeToSlug,
 } from "@/libs/utils";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -178,7 +179,9 @@ export default async function JobDetailPage({ params }) {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Jobs", href: "/jobs" },
+              ...(job.role_type
+                ? [{ label: `${formatRoleType(job.role_type)} Jobs`, href: `/${roleTypeToSlug(job.role_type)}` }]
+                : [{ label: "Jobs", href: "/jobs" }]),
               { label: job.title },
             ]}
           />
@@ -195,9 +198,12 @@ export default async function JobDetailPage({ params }) {
                     </span>
                   )}
                   {job.role_type && (
-                    <span className="badge badge-outline badge-sm">
+                    <Link
+                      href={`/${roleTypeToSlug(job.role_type)}`}
+                      className="badge badge-outline badge-sm hover:badge-primary transition-colors"
+                    >
                       {formatRoleType(job.role_type)}
-                    </span>
+                    </Link>
                   )}
                   {job.location_type && (
                     <span className="badge badge-outline badge-sm">
@@ -322,6 +328,18 @@ export default async function JobDetailPage({ params }) {
                   </div>
                 </div>
               </div>
+
+              {/* Browse all jobs for this role */}
+              {job.role_type && (
+                <div className="mb-6">
+                  <Link
+                    href={`/${roleTypeToSlug(job.role_type)}`}
+                    className="btn btn-outline btn-sm w-full"
+                  >
+                    Browse all {formatRoleType(job.role_type)} jobs &rarr;
+                  </Link>
+                </div>
+              )}
 
               {/* Similar Jobs */}
               {similarJobs.length > 0 && (

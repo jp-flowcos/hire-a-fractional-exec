@@ -1,5 +1,6 @@
 import config from "@/config";
 import { getAllJobSlugs } from "@/libs/api/jobs";
+import { getCitySlugsForRole } from "@/libs/city-content";
 
 export const revalidate = 300;
 
@@ -47,5 +48,16 @@ export default async function sitemap() {
     console.error("[sitemap] failed to load job slugs:", err.message);
   }
 
-  return [...staticEntries, ...jobEntries];
+  // City pages (programmatic SEO — Part G)
+  const cityRoles = ["fractional-coo-jobs"]; // Extend as more roles get city pages
+  const cityEntries = cityRoles.flatMap((roleSlug) =>
+    getCitySlugsForRole(roleSlug).map((citySlug) => ({
+      url: `${BASE}/${roleSlug}/${citySlug}`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.7,
+    }))
+  );
+
+  return [...staticEntries, ...cityEntries, ...jobEntries];
 }

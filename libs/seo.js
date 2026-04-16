@@ -69,36 +69,50 @@ export const getSEOTags = ({
   };
 };
 
-// Strctured Data for Rich Results on Google. Learn more: https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data
-// Find your type here (SoftwareApp, Book...): https://developers.google.com/search/docs/appearance/structured-data/search-gallery
-// Use this tool to check data is well structure: https://search.google.com/test/rich-results
-// You don't have to use this component, but it increase your chances of having a rich snippet on Google.
-// I recommend this one below to your /page.js for software apps: It tells Google your AppName is a Software, and it has a rating of 4.8/5 from 12 reviews.
-// Fill the fields with your own data
-// See https://shipfa.st/docs/features/seo
+// Organization + WebSite structured data for the homepage.
+// Renders two separate JSON-LD blocks per Google's recommendation.
+// Call this from app/page.js (homepage only — not every page).
 export const renderSchemaTags = () => {
+  const siteUrl = `https://${config.domainName}`;
+
+  const organization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: config.appName,
+    url: siteUrl,
+    logo: `${siteUrl}/icon.png`,
+    description: config.appDescription,
+    founder: {
+      "@type": "Person",
+      name: "Jared Perry",
+      jobTitle: "Fractional COO & Chief of Staff",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "jared@hireafractionalexec.com",
+      contactType: "customer service",
+    },
+  };
+
+  const website = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: config.appName,
+    url: siteUrl,
+    description: config.appDescription,
+    publisher: { "@id": siteUrl },
+  };
+
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "http://schema.org",
-          "@type": "WebSite",
-          name: config.appName,
-          description: config.appDescription,
-          url: `https://${config.domainName}/`,
-          publisher: {
-            "@type": "Organization",
-            name: config.appName,
-            url: `https://${config.domainName}/`,
-          },
-          author: {
-            "@type": "Person",
-            name: "Jared Perry",
-            jobTitle: "Fractional COO & Chief of Staff",
-          },
-        }),
-      }}
-    ></script>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
+      />
+    </>
   );
 };

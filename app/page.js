@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getSEOTags } from "@/libs/seo";
+import { getSEOTags, renderSchemaTags } from "@/libs/seo";
 import {
   getFeaturedJobs,
   getRecentJobs,
@@ -103,6 +103,7 @@ export default async function HomePage() {
 
   return (
     <>
+      {renderSchemaTags()}
       <Header />
 
       <main>

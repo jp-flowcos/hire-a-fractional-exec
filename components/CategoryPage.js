@@ -1,5 +1,6 @@
 import Link from "next/link";
 import categories from "@/libs/category-content";
+import { getCity, getCitySlugsForRole } from "@/libs/city-content";
 import { getJobsByRoleType } from "@/libs/api/jobs";
 import { formatRoleType } from "@/libs/utils";
 import JobCard from "@/components/JobCard";
@@ -115,6 +116,19 @@ export default async function CategoryPage({ categorySlug }) {
           ))}
         </div>
 
+        {/* Salary calculator cross-link */}
+        <div className="flex items-center gap-3 bg-base-200/50 border border-base-300 rounded-lg p-4 mb-12">
+          <span className="text-base-content/70 text-sm">
+            What should you charge?
+          </span>
+          <Link
+            href="/salary-calculator"
+            className="btn btn-outline btn-sm btn-primary"
+          >
+            Salary Calculator &rarr;
+          </Link>
+        </div>
+
         {/* Job listings section */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-6">
@@ -173,6 +187,34 @@ export default async function CategoryPage({ categorySlug }) {
             description={`Subscribe to receive the latest ${roleLabel.toLowerCase()} positions delivered to your inbox every week.`}
           />
         </section>
+
+        {/* Browse by city — only rendered for roles with city pages */}
+        {(() => {
+          const citySlugs = getCitySlugsForRole(categorySlug);
+          if (!citySlugs || citySlugs.length === 0) return null;
+          return (
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold mb-4">
+                {roleLabel} Jobs by City
+              </h2>
+              <div className="flex flex-wrap gap-3">
+                {citySlugs.map((cs) => {
+                  const c = getCity(cs);
+                  if (!c) return null;
+                  return (
+                    <Link
+                      key={cs}
+                      href={`/${categorySlug}/${cs}`}
+                      className="btn btn-outline btn-sm"
+                    >
+                      {c.name}{c.state ? `, ${c.state}` : ""}
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })()}
 
         {/* Related categories */}
         {relatedCategories && relatedCategories.length > 0 && (

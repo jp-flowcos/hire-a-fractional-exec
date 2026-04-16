@@ -191,6 +191,42 @@ export async function getAllJobSlugs() {
 }
 
 /**
+ * Get jobs by role type filtered to a city (for city pages).
+ * Uses ilike matching against the freeform location field.
+ * For the special "remote" city, filters by location_type instead.
+ */
+export async function getJobsByRoleTypeAndCity(
+  roleType,
+  locationPatterns,
+  { isRemote = false, limit = 50 } = {}
+) {
+  let query = supabaseAdmin
+    .from("jobs")
+    .select("*")
+    .eq("role_type", roleType)
+    .eq("is_approved", true)
+    .gt("expires_at", new Date().toISOString());
+
+  if (isRemote) {
+    query = query.eq("location_type", "remote");
+  } else if (locationPatterns && locationPatterns.length > 0) {
+    // Build an OR filter matching any of the location patterns.
+    const orFilter = locationPatterns
+      .map((p) => `location.ilike.%${p}%`)
+      .join(",");
+    query = query.or(orFilter);
+  }
+
+  const { data, error } = await query
+    .order("is_featured", { ascending: false })
+    .order("posted_at", { ascending: false })
+    .limit(limit);
+
+  if (error) throw error;
+  return data;
+}
+
+/**
  * Count jobs by role type (for category cards)
  */
 export async function getJobCountsByRoleType() {
