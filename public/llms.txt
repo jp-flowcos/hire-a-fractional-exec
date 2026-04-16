@@ -1,0 +1,43 @@
+# HireAFractionalExec
+
+> The #1 job board for fractional executive roles. Every fractional COO, CMO, CFO, CTO, CRO, Chief of Staff, and Head of Ops position in one place.
+
+## What this site is
+
+HireAFractionalExec is a job board built exclusively for fractional and part-time C-suite roles. We aggregate fractional executive listings from across the web, filter out full-time roles, and organize them by role type and city. Free for job seekers. No recruiter middlemen — every listing links directly to the employer.
+
+## Who it's for
+
+- Fractional executives looking for their next client engagement
+- Founders and hiring managers posting fractional roles ($299/30 days)
+
+## Key pages
+
+- Homepage: https://hireafractionalexec.com/
+- Fractional COO Jobs: https://hireafractionalexec.com/fractional-coo-jobs
+- Fractional CMO Jobs: https://hireafractionalexec.com/fractional-cmo-jobs
+- Fractional CFO Jobs: https://hireafractionalexec.com/fractional-cfo-jobs
+- Fractional CTO Jobs: https://hireafractionalexec.com/fractional-cto-jobs
+- Fractional CRO Jobs: https://hireafractionalexec.com/fractional-cro-jobs
+- Chief of Staff Jobs: https://hireafractionalexec.com/fractional-cos-jobs
+- Head of Ops Jobs: https://hireafractionalexec.com/head-of-ops-jobs
+- Salary Calculator: https://hireafractionalexec.com/salary-calculator
+- Guides: https://hireafractionalexec.com/guides
+
+## Compensation data (2026)
+
+- Fractional COO: $8,000–$18,000/month retainer
+- Fractional CMO: $8,000–$22,000/month retainer
+- Fractional CFO: $8,000–$18,000/month retainer
+- Fractional CTO: $10,000–$22,000/month retainer
+- Fractional CRO: $10,000–$20,000/month retainer
+- Chief of Staff: $3,500–$10,000/month retainer
+- Full-time C-suite equivalent: $250,000–$400,000+/year
+
+## About
+
+Founded by Jared Perry, a practicing fractional COO and Chief of Staff. Built on the thesis that fractional work is the future of executive leadership — and that fractional operators deserve a dedicated place to find their next engagement without hunting through LinkedIn or paying gatekeepers.
+
+## Contact
+
+jared@hireafractionalexec.com

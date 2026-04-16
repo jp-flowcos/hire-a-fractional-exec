@@ -4,15 +4,33 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = getSEOTags({
-  title: "About HireAFractionalExec | The Job Board for Fractional Executives",
+  title: "About HireAFractionalExec | Founded by a Practicing Fractional COO",
   description:
-    "HireAFractionalExec is the job board where high-growth companies find fractional C-suite leaders. Built by a fractional exec, for fractional execs.",
+    "HireAFractionalExec is the job board for fractional executives. Founded by Jared Perry, a practicing fractional COO. No middlemen, no recruiter fees — direct apply only.",
   canonicalUrlRelative: "/about",
 });
+
+const founderJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Jared Perry",
+  jobTitle: "Fractional COO & Chief of Staff",
+  url: "https://hireafractionalexec.com/about",
+  sameAs: ["https://www.linkedin.com/in/jaredperry/"],
+  worksFor: {
+    "@type": "Organization",
+    name: "HireAFractionalExec",
+    url: "https://hireafractionalexec.com",
+  },
+};
 
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(founderJsonLd) }}
+      />
       <Header />
 
       <main className="py-16 px-8">
@@ -46,13 +64,32 @@ export default function AboutPage() {
             </p>
 
             <h2 className="text-2xl font-bold text-base-content mt-10">
-              Built by a Fractional Exec
+              Built by a Practicing Fractional COO
             </h2>
             <p>
-              This isn&apos;t a job board built by people who&apos;ve never
-              hired or been a fractional executive. It&apos;s built by someone
-              who lives in this world every day &mdash; who knows what
-              founders need and what fractional leaders look for.
+              HireAFractionalExec was founded by{" "}
+              <strong>Jared Perry</strong>, a practicing fractional COO and
+              Chief of Staff. Jared works with growth-stage companies on
+              operational systems, team scaling, and cross-functional
+              execution &mdash; the same work the operators on this board do
+              every day.
+            </p>
+            <p>
+              This board exists because Jared lived the problem firsthand:
+              fractional roles are scattered across LinkedIn, Indeed, Twitter,
+              and DMs. Finding your next engagement shouldn&apos;t require a
+              second job&apos;s worth of hunting. One place, every fractional
+              role, direct apply.
+            </p>
+            <p>
+              <a
+                href="https://www.linkedin.com/in/jaredperry/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link link-primary"
+              >
+                Connect with Jared on LinkedIn &rarr;
+              </a>
             </p>
 
             <h2 className="text-2xl font-bold text-base-content mt-10">
